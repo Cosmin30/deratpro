@@ -50,7 +50,7 @@ export default function SiteHeader() {
         <Brand />
         <nav
           aria-label="Navigare principală"
-          className="order-3 flex w-full flex-wrap gap-x-4 text-xs font-semibold text-slate-600 sm:justify-center lg:order-none lg:w-auto"
+          className="order-3 flex w-full flex-wrap gap-x-4 text-xs font-semibold text-slate-600 sm:justify-center lg:order-0 lg:w-auto"
         >
           {navigation.map((item) => {
             const isActive = activeHref === item.href;

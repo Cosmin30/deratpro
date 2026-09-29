@@ -4,7 +4,7 @@ import { footerContent } from "@/data/content";
 export default function SiteFooter() {
   return (
     <footer className="bg-surface-subtle px-5 pb-6 pt-12 sm:px-8 lg:px-12">
-      <div className="mx-auto grid max-w-[1480px] gap-8 sm:grid-cols-2 lg:grid-cols-[1.55fr_1fr_1fr_0.95fr] lg:gap-8">
+      <div className="mx-auto grid max-w-370 gap-8 sm:grid-cols-2 lg:grid-cols-[1.55fr_1fr_1fr_0.95fr] lg:gap-8">
         <div>
           <Brand />
           <p className="mt-4 max-w-sm text-xs leading-5 text-text-secondary">
@@ -61,7 +61,7 @@ export default function SiteFooter() {
             {footerContent.phone}
           </a>
           <a
-            className="block break-words text-xs text-text-secondary hover:text-secondary focus-visible:rounded-sm focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-secondary"
+            className="block wrap-break-word text-xs text-text-secondary hover:text-secondary focus-visible:rounded-sm focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-secondary"
             href={footerContent.emailHref}
           >
             {footerContent.email}
@@ -78,7 +78,7 @@ export default function SiteFooter() {
         </div>
       </div>
 
-      <div className="mx-auto mt-8 flex max-w-[1480px] flex-col gap-3 border-t border-slate-200/80 pt-5 text-[10px] text-text-secondary sm:flex-row sm:items-center sm:justify-between">
+      <div className="mx-auto mt-8 flex max-w-370 flex-col gap-3 border-t border-slate-200/80 pt-5 text-[10px] text-text-secondary sm:flex-row sm:items-center sm:justify-between">
         <p>{footerContent.copyright}</p>
         <ul className="flex flex-wrap gap-x-5 gap-y-2 font-medium text-primary">
           {footerContent.legalLinks.map((link) => (

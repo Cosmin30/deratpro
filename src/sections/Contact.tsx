@@ -6,7 +6,7 @@ import { contactContent } from "@/data/content";
 export default function Contact() {
   return (
     <section className="scroll-mt-44 bg-surface-page px-5 py-section sm:scroll-mt-32 sm:px-8 lg:scroll-mt-20 lg:px-12" id="contact">
-      <div className="mx-auto grid max-w-[1480px] gap-6 lg:grid-cols-[1.35fr_0.95fr] lg:gap-10">
+      <div className="mx-auto grid max-w-370 gap-6 lg:grid-cols-[1.35fr_0.95fr] lg:gap-10">
         <div className="rounded-card bg-white p-5 shadow-card sm:p-8">
           <SectionTitle
             align="left"
@@ -41,7 +41,7 @@ export default function Contact() {
                       {contact.label}
                     </p>
                     {contact.href ? (
-                      <a className="mt-0.5 inline-flex min-h-11 max-w-full items-center break-words rounded-sm text-sm font-semibold text-white hover:text-blue-300 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-tertiary" href={contact.href}>
+                      <a className="mt-0.5 inline-flex min-h-11 max-w-full items-center wrap-break-word rounded-sm text-sm font-semibold text-white hover:text-blue-300 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-tertiary" href={contact.href}>
                         {contact.value}
                       </a>
                     ) : (

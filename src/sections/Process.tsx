@@ -5,7 +5,7 @@ import { processContent } from "@/data/content";
 export default function Process() {
   return (
     <section className="scroll-mt-44 bg-surface-subtle px-5 py-section sm:scroll-mt-32 sm:px-8 lg:scroll-mt-20 lg:px-12" id="process">
-      <div className="mx-auto max-w-[1480px]">
+      <div className="mx-auto max-w-370">
         <SectionTitle
           description={processContent.description}
           eyebrow={processContent.eyebrow}

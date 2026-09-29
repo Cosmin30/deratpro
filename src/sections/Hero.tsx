@@ -5,7 +5,7 @@ import { heroContent } from "@/data/content";
 
 export default function Hero() {
   return (
-    <section className="scroll-mt-44 bg-gradient-to-br from-surface-page via-blue-50/70 to-emerald-50/60 sm:scroll-mt-32 lg:scroll-mt-20" id="top">
+    <section className="scroll-mt-44 bg-linear-to-br from-surface-page via-blue-50/70 to-emerald-50/60 sm:scroll-mt-32 lg:scroll-mt-20" id="top">
       <div className="mx-auto grid max-w-[1580px] items-center gap-10 px-5 py-12 sm:px-8 sm:py-16 lg:px-12 lg:py-20 xl:items-start xl:pt-24 xl:pb-36 xl:grid-cols-[1.08fr_0.92fr] xl:gap-16">
         <div className="xl:mt-8">
           <span className="inline-flex items-center gap-2 rounded-full bg-white/80 px-3 py-1.5 text-[10px] font-semibold text-slate-600 shadow-sm sm:text-xs">
@@ -40,7 +40,7 @@ export default function Hero() {
             ))}
           </ul>
         </div>
-        <div className="relative mx-auto aspect-[4/4.4] w-full overflow-hidden rounded-2xl bg-primary shadow-2xl shadow-slate-900/20 sm:aspect-square md:max-w-[34rem] xl:mx-0 xl:aspect-[0.88/1] xl:max-w-[37rem] xl:max-h-[42rem] xl:justify-self-end">
+        <div className="relative mx-auto aspect-[4/4.4] w-full overflow-hidden rounded-2xl bg-primary shadow-2xl shadow-slate-900/20 sm:aspect-square md:max-w-136 xl:mx-0 xl:aspect-[0.88/1] xl:max-w-148 xl:max-h-168 xl:justify-self-end">
           <HeroScene />
         </div>
       </div>
