@@ -120,8 +120,10 @@ function ParticleNetwork({ reducedMotion }: { reducedMotion: boolean }) {
   const scanWaveRef = useRef<Mesh>(null);
   const scanWaveMaterialRef = useRef<MeshBasicMaterial>(null);
   const elapsedTime = useRef(0);
-  const network = useMemo(createNetwork, []);
-  const glowTexture = useMemo(createGlowTexture, []);
+  const network = useMemo(() => createNetwork(), []);
+  const particlePositionsRef = useRef(network.particlePositions);
+  const linePositionsRef = useRef(network.linePositions);
+  const glowTexture = useMemo(() => createGlowTexture(), []);
 
   useEffect(() => () => glowTexture.dispose(), [glowTexture]);
 
@@ -129,7 +131,9 @@ function ParticleNetwork({ reducedMotion }: { reducedMotion: boolean }) {
     const motionScale = reducedMotion ? 0.4 : 1;
     elapsedTime.current += delta * motionScale;
     const time = elapsedTime.current;
-    const { basePositions, particlePositions, phases, speeds, amplitudes } = network;
+    const { basePositions, phases, speeds, amplitudes } = network;
+    const particlePositions = particlePositionsRef.current;
+    const linePositions = linePositionsRef.current;
 
     for (let i = 0; i < particlePositions.length; i += 1) {
       particlePositions[i] =
@@ -142,9 +146,9 @@ function ParticleNetwork({ reducedMotion }: { reducedMotion: boolean }) {
 
     for (let edge = 0; edge < network.connections.length; edge += 1) {
       const particleIndex = network.connections[edge];
-      network.linePositions[edge * 3] = particlePositions[particleIndex * 3];
-      network.linePositions[edge * 3 + 1] = particlePositions[particleIndex * 3 + 1];
-      network.linePositions[edge * 3 + 2] = particlePositions[particleIndex * 3 + 2];
+      linePositions[edge * 3] = particlePositions[particleIndex * 3];
+      linePositions[edge * 3 + 1] = particlePositions[particleIndex * 3 + 1];
+      linePositions[edge * 3 + 2] = particlePositions[particleIndex * 3 + 2];
     }
 
     const lineAttribute = linesRef.current?.geometry.getAttribute("position");
