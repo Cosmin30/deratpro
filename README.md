@@ -1,36 +1,88 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# DeratPro
 
-## Getting Started
+Landing page modernă și responsive pentru **DeratPro**, o companie fictivă de deratizare, dezinsecție și dezinfecție (DDD).
 
-First, run the development server:
+## Demo
+
+* **Repository:** github.com/Cosmin30/deratpro
+* **Live:** https://deratpro-sigma.vercel.app/
+
+---
+
+## Despre proiect
+
+DeratPro este un site de prezentare construit pentru a inspira încredere și pentru a încuraja solicitările de ofertă. Aplicația este dezvoltată în **Next.js + TypeScript**, iar animația din secțiunea Hero este realizată cu **Three.js**, utilizând **React Three Fiber**.
+
+## Funcționalități
+
+* Hero cu animație 3D și buton principal (CTA)
+* Secțiune Servicii cu cele trei servicii DDD
+* Secțiune „De ce DeratPro” cu avantajele companiei
+* Proces de lucru în 3 pași
+* Formular de contact cu validare în browser și mesaj de confirmare
+* Navigare cu ancore și evidențierea secțiunii active
+* Design complet responsive pentru mobil, tabletă și desktop
+
+## Tehnologii
+
+* Next.js (App Router)
+* React
+* TypeScript
+* Tailwind CSS
+* Three.js
+* @react-three/fiber
+
+## Concept de design
+
+Conceptul vizual a fost creat în **Google Stitch** și adaptat într-o implementare funcțională în Next.js, păstrând direcția modernă și minimalistă a designului.
+
+### Prompt utilizat (rezumat)
+
+> Creează o landing page modernă și responsive pentru DeratPro, o companie românească de deratizare, dezinsecție și dezinfecție. Designul trebuie să transmită încredere și profesionalism, să includă un Hero cu un vizual tehnologic abstract, carduri pentru servicii, avantaje, un proces în trei pași și un formular de contact. Folosește o paletă curată cu accente albastre și verzi și adaptează layoutul pentru mobil și desktop.
+
+## Decizii și compromisuri
+
+* Animația Hero folosește particule, conexiuni și o undă discretă de scanare pentru a sugera tehnologie și precizie.
+* Scena 3D este implementată cu React Three Fiber și animată prin `useFrame`.
+* Formularul validează datele doar în browser, fără integrare cu un backend.
+* Conținutul repetat este separat în `src/data/content.ts`, iar fiecare secțiune este organizată ca o componentă reutilizabilă.
+* Au fost utilizate doar dependențele necesare proiectului.
+
+## Rulare locală
+
+### Cerințe
+
+* Node.js
+* npm
+
+### Instalare
 
 ```bash
+npm ci
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Deschide **http://localhost:3000** în browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Verificare
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run lint
+npm run build
+```
 
-## Learn More
+## Structura proiectului
 
-To learn more about Next.js, take a look at the following resources:
+```text
+src/
+├── app/                 # App Router și stiluri globale
+├── components/          # Componente reutilizabile
+│   └── three/           # Scena Three.js din Hero
+├── data/                # Conținut static
+├── sections/            # Cele 5 secțiuni ale paginii
+└── lib/                 # Utilitare
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Autor
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+**Cosmin Cocea**
